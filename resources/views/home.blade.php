@@ -25,8 +25,8 @@
 
                                 @if(Auth::user()->position == 'Member')
 
-                                    <a href="#" class="pull-right" style="margin-left: 10px"> Done </a>
-                                    <a href="#" class="pull-right">In Progress</a>
+                                    <a href="done_task/{{$post->id}}" class="pull-right" style="margin-left: 10px"> Done </a>
+                                    <a href="inprogress_task/{{$post->id}}" class="pull-right">In Progress</a>
 
                                     @endif
                             </p>

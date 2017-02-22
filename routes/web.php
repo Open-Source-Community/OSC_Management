@@ -27,3 +27,8 @@ Route::get('/notes/{id}/edit','TaskController@edit');
 Route::post('/edit_post/{id}','TaskController@update');
 
 Route::get('/{id}/profile','HomeController@profile_data');
+
+
+Route::post('/inprogress_task/{id}', 'InProgressController@insert_inprogress');
+
+Route::post('/done_task/{id}', 'InProgressController@insert_done');

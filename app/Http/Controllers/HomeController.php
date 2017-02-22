@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\InProgress;
 use Illuminate\Http\Request;
 use App\Task;
 use Auth;
@@ -23,6 +24,7 @@ class HomeController extends Controller
         $user_data = Task::where('user_committe', '=', Auth::user()->committe)->get();
 
         return view('home', compact('user_data'));
+
     }
 
     public function profile_data($id)

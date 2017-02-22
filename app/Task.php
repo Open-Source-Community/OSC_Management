@@ -14,4 +14,14 @@ class Task extends Eloquent
     {
         return $this->belongsTo('App\User');
     }
+
+    public function inprogress_tasks()
+    {
+        return $this->hasMany('App\InProgress');
+    }
+
+    public function done_tasks()
+    {
+        return $this->hasMany('App\Done');
+    }
 }

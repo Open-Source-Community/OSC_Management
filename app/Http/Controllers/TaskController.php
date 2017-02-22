@@ -12,20 +12,20 @@ class TaskController extends Controller
     {
         $content = $request->input('content');
 
-        $note = new Task;
-        $note->task = $content;
-        $note->user_id = Auth::user()->id;
-        $note->user_committe = Auth::user()->committe;
-        $note->user_position = Auth::user()->position;
+        $task = new Task;
+        $task->task = $content;
+        $task->user_id = Auth::user()->id;
+        $task->user_committe = Auth::user()->committe;
+        $task->user_position = Auth::user()->position;
 
-        $note->save();
+        $task->save();
 
         return redirect('home');
     }
 
     public function edit($id)
     {
-        $notes = Auth::user()->notes->find($id);
+        $notes = Auth::user()->tasks->find($id);
 
         return view('edit', compact('notes'));
     }
@@ -34,18 +34,18 @@ class TaskController extends Controller
     {
         $content = $request->input('content');
 
-        $notes = Auth::user()->notes->find($id);
+        $task = Auth::user()->tasks->find($id);
 
-        $notes->update(['task' => $content]);
+        $task->update(['task' => $content]);
 
         return redirect('home');
     }
 
     public function delete_post($id)
     {
-        $note = Auth::user()->notes->find($id);
+        $task = Auth::user()->tasks->find($id);
 
-        $note->delete();
+        $task->delete();
 
         return redirect('home');
     }
