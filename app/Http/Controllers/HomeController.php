@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Done;
 use App\InProgress;
 use App\Task;
+use App\User;
 use Auth;
 use DB;
 
@@ -29,7 +30,9 @@ class HomeController extends Controller
     {
         $user_data = Task::where('user_committe', '=', Auth::user()->committe)->get();
 
-        return view('home', compact('user_data'));
+        $user_data2 = User::where('committe', '=', Auth::user()->committe)->get();
+
+        return view('home', compact('user_data','user_data2'));
     }
 
     public function profile_data($id)

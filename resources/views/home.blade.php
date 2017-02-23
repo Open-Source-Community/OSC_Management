@@ -14,7 +14,7 @@
 
                         @foreach($user_data as $post)
                             <p>
-                                {{ $post->task }}
+                                {{ $post->task_member }} is required {{$post->task}}
 
                                 @if($post->user_id == Auth::user()->id)
 
@@ -23,7 +23,7 @@
 
                                 @endif
 
-                                @if(Auth::user()->position == 'Member')
+                                @if(Auth::user()->position == 'Member' && Auth::user()->name == $post->task_member)
 
                                     {{--<a href="/aa" class="pull-right" onclick="{{action('HomeController@insert_done')}}"--}}
 
@@ -70,7 +70,20 @@
                                         @endif
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <div class="col-md-8 col-md-offset-4">
+                                        <select name="task_to_member">
+                                            @foreach($user_data2 as $post)
 
+                                                @if($post->position == 'Member')
+
+                                                    <option value="{{$post->name}}">{{$post->name}}</option>
+
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <div class="col-md-8 col-md-offset-4">
                                         <button type="submit" name="AddPost" class="btn btn-primary">
@@ -85,36 +98,38 @@
             </div>
         </div>
     @endif
-    @if(Auth::user()->position == 'Member')
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">In Progress</div>
 
-                        <div class="panel-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">In Progress</div>
 
+                    <div class="panel-body">
+                        @if(Auth::user()->position == 'Member')
 
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
-    @endif
-    @if(Auth::user()->position == 'Member')
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Done</div>
+    </div>
 
-                        <div class="panel-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Done</div>
 
+                    <div class="panel-body">
 
-                        </div>
+                        @if(Auth::user()->position == 'Member')
+
+                        @endif
+
                     </div>
                 </div>
             </div>
         </div>
-    @endif
+    </div>
 @endsection
