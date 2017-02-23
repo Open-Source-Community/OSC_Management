@@ -25,37 +25,15 @@
 
                                 @if(Auth::user()->position == 'Member')
 
-                                    <a href="done_task/{{$post->id}}" class="pull-right" style="margin-left: 10px">
-                                        Done </a>
-                                    <a href="inprogress_task/{{$post->id}}" class="pull-right">In Progress</a>
+                                    {{--<a href="/aa" class="pull-right" onclick="{{action('HomeController@insert_done')}}"--}}
+
+                                    <a href="/done/{{$post->id}}/{{Auth::user()->id}}" style="margin-left: 10px"
+                                       class="pull-right">
+                                        Done</a>
+                                    <a href="/inprogress/{{$post->id}}/{{Auth::user()->id}}" class="pull-right">
+                                        InProgress</a>
 
                             </p>
-
-                            {{--<form class="form-horizontal" role="form" method="post" action="/inprogress_task/{{$post->id}}">--}}
-                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-
-                            {{--<div class="form-group">--}}
-                            {{--<div class="col-md-8 col-md-offset-4">--}}
-                            {{--<button type="submit" name="AddInProgress" class="btn btn-primary">--}}
-                            {{--InProgress--}}
-                            {{--</button>--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-
-                            {{--</form>--}}
-
-                            {{--<form class="form-horizontal" role="form" method="post" action="/done_task/{{$post->id}}">--}}
-                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-
-                            {{--<div class="form-group">--}}
-                            {{--<div class="col-md-8 col-md-offset-4">--}}
-                            {{--<button type="submit" name="AddDone" class="btn btn-primary">--}}
-                            {{--Done--}}
-                            {{--</button>--}}
-                            {{--</div>--}}
-                            {{--</div>--}}
-
-                            {{--</form>--}}
 
                             @endif
 

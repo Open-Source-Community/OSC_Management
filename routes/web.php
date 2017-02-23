@@ -32,6 +32,13 @@ Route::get('/{id}/profile', 'HomeController@profile_data');
 
 ///////////////////////////////////////////////////////////////////////////////
 
-Route::post('/inprogress_task/{id}', 'HomeController@insert_inprogress');
+//Route::post('/notes/{id}/inprogress', 'HomeController@insert_inprogress');
+//Route::post('/notes/{id}/done', 'HomeController@insert_done');
 
-Route::post('/done_task/{id}', 'HomeController@insert_done');
+Route::get('/inprogress/{id}/{id_user}','HomeController@insert_inprogress');
+Route::get('/done/{id}/{id_user}','HomeController@insert_done');
+
+//Route::get('/done/{id}/{id_user}',function ($id , $id_user){
+//    echo $id;
+//    echo $id_user;
+//});
