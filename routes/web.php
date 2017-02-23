@@ -17,18 +17,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
+///////////////////////////////////////////////////////////////////////////////
+
 Route::get('/home', 'HomeController@index');
 
 Route::post('/add', 'TaskController@insert_post');
 
 Route::get('/notes/{id}/delete', 'TaskController@delete_post');
 
-Route::get('/notes/{id}/edit','TaskController@edit');
-Route::post('/edit_post/{id}','TaskController@update');
+Route::get('/notes/{id}/edit', 'TaskController@edit');
+Route::post('/edit_post/{id}', 'TaskController@update');
 
-Route::get('/{id}/profile','HomeController@profile_data');
+Route::get('/{id}/profile', 'HomeController@profile_data');
 
+///////////////////////////////////////////////////////////////////////////////
 
-Route::post('/inprogress_task/{id}', 'InProgressController@insert_inprogress');
+Route::post('/inprogress_task/{id}', 'HomeController@insert_inprogress');
 
-Route::post('/done_task/{id}', 'InProgressController@insert_done');
+Route::post('/done_task/{id}', 'HomeController@insert_done');

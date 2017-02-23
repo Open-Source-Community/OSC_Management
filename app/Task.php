@@ -20,7 +20,7 @@ class Task extends Eloquent
         return $this->hasMany('App\InProgress');
     }
 
-    public function done_tasks()
+    public function done()
     {
         return $this->hasMany('App\Done');
     }

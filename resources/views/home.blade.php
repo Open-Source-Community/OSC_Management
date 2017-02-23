@@ -16,7 +16,7 @@
                             <p>
                                 {{ $post->task }}
 
-                                    @if($post->user_id == Auth::user()->id)
+                                @if($post->user_id == Auth::user()->id)
 
                                     <a href="notes/{{ $post->id }}/delete" class="pull-right" style="margin-left: 10px">Delete</a>
                                     <a href="notes/{{ $post->id }}/edit" class="pull-right"> Edit </a>
@@ -25,11 +25,40 @@
 
                                 @if(Auth::user()->position == 'Member')
 
-                                    <a href="done_task/{{$post->id}}" class="pull-right" style="margin-left: 10px"> Done </a>
+                                    <a href="done_task/{{$post->id}}" class="pull-right" style="margin-left: 10px">
+                                        Done </a>
                                     <a href="inprogress_task/{{$post->id}}" class="pull-right">In Progress</a>
 
-                                    @endif
                             </p>
+
+                            {{--<form class="form-horizontal" role="form" method="post" action="/inprogress_task/{{$post->id}}">--}}
+                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+
+                            {{--<div class="form-group">--}}
+                            {{--<div class="col-md-8 col-md-offset-4">--}}
+                            {{--<button type="submit" name="AddInProgress" class="btn btn-primary">--}}
+                            {{--InProgress--}}
+                            {{--</button>--}}
+                            {{--</div>--}}
+                            {{--</div>--}}
+
+                            {{--</form>--}}
+
+                            {{--<form class="form-horizontal" role="form" method="post" action="/done_task/{{$post->id}}">--}}
+                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+
+                            {{--<div class="form-group">--}}
+                            {{--<div class="col-md-8 col-md-offset-4">--}}
+                            {{--<button type="submit" name="AddDone" class="btn btn-primary">--}}
+                            {{--Done--}}
+                            {{--</button>--}}
+                            {{--</div>--}}
+                            {{--</div>--}}
+
+                            {{--</form>--}}
+
+                            @endif
+
                         @endforeach
 
                     </div>
