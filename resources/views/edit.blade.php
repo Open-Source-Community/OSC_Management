@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <title>Edit Note</title>
+    <title>Edit Task</title>
 @endsection
 
 @section('content')
@@ -10,14 +10,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Update Note of {{ Auth::user()->name }}</div>
+                    <div class="panel-heading">Update Task of {{ Auth::user()->name }}</div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="post" action="/edit_post/{{$notes->id}}">
+                        <form class="form-horizontal" role="form" method="post" action="/edit_task/{{$notes->id}}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="content" class="col-md-4 control-label">Update Note</label>
+                                <label for="content" class="col-md-4 control-label">Update Task</label>
 
                                 <div class="col-md-6">
 
@@ -36,7 +36,7 @@
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" name="UpdatePost" class="btn btn-primary">
-                                        Update Note
+                                        Update Task
                                     </button>
                                 </div>
                             </div>

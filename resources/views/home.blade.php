@@ -18,8 +18,8 @@
 
                                 @if($post->user_id == Auth::user()->id)
 
-                                    <a href="notes/{{ $post->id }}/delete" class="pull-right" style="margin-left: 10px">Delete</a>
-                                    <a href="notes/{{ $post->id }}/edit" class="pull-right"> Edit </a>
+                                    <a href="tasks/{{ $post->id }}/delete" class="pull-right" style="margin-left: 10px">Delete</a>
+                                    <a href="tasks/{{ $post->id }}/edit" class="pull-right"> Edit </a>
 
                                 @endif
 
@@ -27,10 +27,8 @@
 
                                     {{--<a href="/aa" class="pull-right" onclick="{{action('HomeController@insert_done')}}"--}}
 
-                                    <a href="/done/{{$post->id}}/{{Auth::user()->id}}" style="margin-left: 10px"
+                                    <a href="/inprogress/{{$post->id}}/{{$post->task_member}}/{{$post->task}}"
                                        class="pull-right">
-                                        Done</a>
-                                    <a href="/inprogress/{{$post->id}}/{{Auth::user()->id}}" class="pull-right">
                                         InProgress</a>
 
                             </p>
@@ -87,7 +85,7 @@
                                 <div class="form-group">
                                     <div class="col-md-8 col-md-offset-4">
                                         <button type="submit" name="AddPost" class="btn btn-primary">
-                                            Add Note
+                                            Add Task
                                         </button>
                                     </div>
                                 </div>
@@ -106,9 +104,18 @@
                     <div class="panel-heading">In Progress</div>
 
                     <div class="panel-body">
-                        @if(Auth::user()->position == 'Member')
+                        @foreach($user_data3 as $post)
 
-                        @endif
+                            <p>
+                                {{ $post->member }} in progress {{$post->taskk}}
+
+                                @if(Auth::user()->position == 'Member' && Auth::user()->name == $post->member)
+
+                                    <a href="/done/{{$post->id}}/{{$post->member}}/{{$post->taskk}}" class="pull-right">
+                                        Done</a>
+                                @endif
+                            </p>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -123,9 +130,14 @@
 
                     <div class="panel-body">
 
-                        @if(Auth::user()->position == 'Member')
+                        @foreach($user_data4 as $post)
 
-                        @endif
+                            <p>
+                                {{ $post->member }} done {{$post->taskk}}
+
+                            </p>
+
+                        @endforeach
 
                     </div>
                 </div>

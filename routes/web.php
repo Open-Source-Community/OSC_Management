@@ -23,20 +23,17 @@ Route::get('/home', 'HomeController@index');
 
 Route::post('/add', 'TaskController@insert_post');
 
-Route::get('/notes/{id}/delete', 'TaskController@delete_post');
+Route::get('/tasks/{id}/delete', 'TaskController@delete_post');
 
-Route::get('/notes/{id}/edit', 'TaskController@edit');
-Route::post('/edit_post/{id}', 'TaskController@update');
+Route::get('/tasks/{id}/edit', 'TaskController@edit');
+Route::post('/edit_task/{id}', 'TaskController@update');
 
 Route::get('/{id}/profile', 'HomeController@profile_data');
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//Route::post('/notes/{id}/inprogress', 'HomeController@insert_inprogress');
-//Route::post('/notes/{id}/done', 'HomeController@insert_done');
-
-Route::get('/inprogress/{id}/{id_user}','HomeController@insert_inprogress');
-Route::get('/done/{id}/{id_user}','HomeController@insert_done');
+Route::get('/inprogress/{id}/{member}/{taskk}','HomeController@insert_inprogress');
+Route::get('/done/{id}/{member}/{taskk}','HomeController@insert_done');
 
 //Route::get('/done/{id}/{id_user}',function ($id , $id_user){
 //    echo $id;
