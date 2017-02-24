@@ -54,4 +54,18 @@ class HomeController extends Controller
 
         return view('profile', compact('data'));
     }
+
+    public function delete_task_inprogress($id)
+    {
+        DB::delete('delete from  progress where id = ?', [$id]);
+
+        return redirect('home');
+    }
+
+    public function delete_task_done($id)
+    {
+        DB::delete('delete from  donee where id = ?', [$id]);
+
+        return redirect('home');
+    }
 }

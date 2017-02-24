@@ -109,6 +109,12 @@
                             <p>
                                 {{ $post->member }} in progress {{$post->taskk}}
 
+                                @if(Auth::user()->position == 'Head' && $post->user_committe == Auth::user()->committe)
+
+                                    <a href="tasks_inprogress/{{ $post->id }}/delete" class="pull-right">Delete</a>
+
+                                @endif
+
                                 @if(Auth::user()->position == 'Member' && Auth::user()->name == $post->member)
 
                                     <a href="/done/{{$post->id}}/{{$post->member}}/{{$post->taskk}}" class="pull-right">
@@ -135,6 +141,11 @@
                             <p>
                                 {{ $post->member }} done {{$post->taskk}}
 
+                                @if(Auth::user()->position == 'Head' && $post->user_committe == Auth::user()->committe)
+
+                                    <a href="tasks_done/{{ $post->id }}/delete" class="pull-right">Delete</a>
+
+                                @endif
                             </p>
 
                         @endforeach

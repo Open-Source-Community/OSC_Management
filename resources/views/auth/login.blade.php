@@ -38,58 +38,6 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group{{ $errors->has('position') ? ' has-error' : '' }}">
-                                <label for="position" class="col-md-4 control-label">Your Position</label>
-
-                                <div class="col-md-6">
-
-                                    <h5><input id="position" type="radio" name="position" value="Head" required
-                                               autofocus/> Head
-                                        <input id="position" type="radio" name="position" value="Member" required
-                                               autofocus/> Member
-                                    </h5>
-                                    @if ($errors->has('position'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('position') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="form-group{{ $errors->has('committe') ? ' has-error' : '' }}">
-                                <label for="committe" class="col-md-4 control-label">Your Committe</label>
-
-                                <div class="col-md-6">
-
-                                    <h5><input id="committe" type="radio" name="committe" value="IT" required
-                                               autofocus/> IT
-                                        <input id="committe" type="radio" name="committe" value="Projects" required
-                                               autofocus/> Projects
-                                        <input id="committe" type="radio" name="committe" value="HR" required
-                                               autofocus/> HR
-                                        <input id="committe" type="radio" name="committe" value="PR" required
-                                               autofocus/> PR
-                                        <input id="committe" type="radio" name="committe" value="LR" required
-                                               autofocus/> LR
-                                        <input id="committe" type="radio" name="committe" value="Linux" required
-                                               autofocus/> Linux</h5>
-                                    <h5><input id="committe" type="radio" name="committe" value="Laravel" required
-                                               autofocus/> Laravel
-                                        <input id="committe" type="radio" name="committe" value="Blender" required
-                                               autofocus/> Blender
-                                        <input id="committe" type="radio" name="committe" value="CCC" required
-                                               autofocus/> CCC
-                                        <input id="committe" type="radio" name="committe" value="FR" required
-                                               autofocus/> FR
-                                        <input id="committe" type="radio" name="committe" value="EnglishHeros" required
-                                               autofocus/> English Heros</5>
-
-                                    @if ($errors->has('committe'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('committe') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
