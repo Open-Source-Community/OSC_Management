@@ -143,7 +143,7 @@
 
                                 @if(Auth::user()->position == 'Head' && $post->user_committe == Auth::user()->committe)
 
-                                    <a href="tasks_done/{{ $post->id }}/delete" class="pull-right" >Delete</a>
+                                    <a href="tasks_done/{{ $post->id }}/delete" class="pull-right">Delete</a>
 
                                 @endif
                             </p>
