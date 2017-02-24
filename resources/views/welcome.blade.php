@@ -7,6 +7,19 @@
 
     <title>OSC Trello</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -77,11 +90,71 @@
         </div>
     @endif
 
-    <div class="content">
-        <div class="title m-b-md">
-            OSC Trello
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>IT</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Projects</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Laravel</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>HR</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>PR</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>FR</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>LR</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Linux</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>English Heros</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Blender</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>CCC</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Art</h3>
+                <p>Open source refers to any program whose source code is made available for use or modification as
+                    users or other developers see fit.</p>
+            </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>

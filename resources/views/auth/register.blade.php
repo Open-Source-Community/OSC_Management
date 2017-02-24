@@ -84,28 +84,30 @@
 
                                 <div class="col-md-6">
 
-                                    <h5><input id="committe" type="radio" name="committe" value="IT" required
-                                               autofocus/> IT
+                                    <h5><input id="committe" type="radio" name="committe" value="EnglishHeros" required
+                                               autofocus/> English Heros
                                         <input id="committe" type="radio" name="committe" value="Projects" required
                                                autofocus/> Projects
                                         <input id="committe" type="radio" name="committe" value="HR" required
                                                autofocus/> HR
                                         <input id="committe" type="radio" name="committe" value="PR" required
                                                autofocus/> PR
-                                        <input id="committe" type="radio" name="committe" value="LR" required
-                                               autofocus/> LR
-                                        <input id="committe" type="radio" name="committe" value="Linux" required
-                                               autofocus/> Linux</h5>
-                                    <h5><input id="committe" type="radio" name="committe" value="Laravel" required
-                                               autofocus/> Laravel
-                                        <input id="committe" type="radio" name="committe" value="Blender" required
-                                               autofocus/> Blender
-                                        <input id="committe" type="radio" name="committe" value="CCC" required
-                                               autofocus/> CCC
                                         <input id="committe" type="radio" name="committe" value="FR" required
                                                autofocus/> FR
-                                        <input id="committe" type="radio" name="committe" value="EnglishHeros" required
-                                               autofocus/> English Heros</5>
+                                        <input id="committe" type="radio" name="committe" value="LR" required
+                                               autofocus/> LR</h5>
+                                    <h5><input id="committe" type="radio" name="committe" value="IT" required
+                                               autofocus/> IT
+                                        <input id="committe" type="radio" name="committe" value="Laravel" required
+                                               autofocus/> Laravel
+                                        <input id="committe" type="radio" name="committe" value="CCC" required
+                                               autofocus/> CCC
+                                        <input id="committe" type="radio" name="committe" value="Art" required
+                                               autofocus/> Art
+                                        <input id="committe" type="radio" name="committe" value="Linux" required
+                                               autofocus/> Linux
+                                        <input id="committe" type="radio" name="committe" value="Blender" required
+                                               autofocus/> Blender</h5>
 
                                     @if ($errors->has('committe'))
                                         <span class="help-block">
