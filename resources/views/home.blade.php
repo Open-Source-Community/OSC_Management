@@ -14,7 +14,7 @@
 
                         @foreach($user_data as $post)
                             <p>
-                                {{ $post->task_member }} is required {{$post->task}} {{$post->created_at}}
+                                {{ $post->task_member }} is required ( {{$post->task}} ) Created Task in {{$post->created_at}}
 
                                 @if($post->user_id == Auth::user()->id)
 

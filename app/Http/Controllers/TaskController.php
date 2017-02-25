@@ -27,7 +27,7 @@ class TaskController extends Controller
             return redirect('home');
 
         } else {
-            return redirect('home');
+            echo 'There is not Members to Add Tasks for them';
         }
     }
 
