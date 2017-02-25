@@ -13,16 +13,22 @@ class TaskController extends Controller
         $content = $request->input('content');
         $option = $request->input('task_to_member');
 
-        $task = new Task;
-        $task->task = $content;
-        $task->task_member = $option;
-        $task->user_id = Auth::user()->id;
-        $task->user_committe = Auth::user()->committe;
-        $task->user_position = Auth::user()->position;
+        if ($option != null) {
 
-        $task->save();
+            $task = new Task;
+            $task->task = $content;
+            $task->task_member = $option;
+            $task->user_id = Auth::user()->id;
+            $task->user_committe = Auth::user()->committe;
+            $task->user_position = Auth::user()->position;
 
-        return redirect('home');
+            $task->save();
+
+            return redirect('home');
+
+        } else {
+            return redirect('home');
+        }
     }
 
     public function edit($id)
