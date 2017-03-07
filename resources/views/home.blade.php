@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('header')
-    <title>{{ Auth::user()->name }}</title>
-@endsection
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -14,7 +10,8 @@
 
                         @foreach($user_data as $post)
                             <p>
-                                {{ $post->task_member }} is required ( {{$post->task}} ) Created Task in {{$post->created_at}}
+                                {{ $post->task_member }} is required ( {{$post->task}} ) Created Task
+                                in {{$post->created_at}}
 
                                 @if($post->user_id == Auth::user()->id)
 
@@ -42,7 +39,7 @@
             </div>
         </div>
     </div>
-    @if(Auth::user()->position == 'Head')
+    @if(Auth::user()->position == 'Head' || Auth::user()->position == 'ViceHead')
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -109,7 +106,7 @@
                             <p>
                                 {{ $post->member }} in progress {{$post->taskk}}
 
-                                @if(Auth::user()->position == 'Head' && $post->user_committe == Auth::user()->committe)
+                                @if((Auth::user()->position == 'Head' || Auth::user()->position == 'ViceHead') && $post->user_committe == Auth::user()->committe)
 
                                     <a href="tasks_inprogress/{{ $post->id }}/delete" class="pull-right">Delete</a>
 
@@ -141,7 +138,7 @@
                             <p>
                                 {{ $post->member }} done {{$post->taskk}}
 
-                                @if(Auth::user()->position == 'Head' && $post->user_committe == Auth::user()->committe)
+                                @if((Auth::user()->position == 'Head' || Auth::user()->position == 'ViceHead') && $post->user_committe == Auth::user()->committe)
 
                                     <a href="tasks_done/{{ $post->id }}/delete" class="pull-right">Delete</a>
 

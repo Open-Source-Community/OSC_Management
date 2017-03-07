@@ -69,6 +69,8 @@
 
                                     <h5><input id="position" type="radio" name="position" value="Head" required
                                                autofocus/> Head
+                                        <input id="position" type="radio" name="position" value="ViceHead" required
+                                               autofocus/> Vice Head
                                         <input id="position" type="radio" name="position" value="Member" required
                                                autofocus/> Member
                                     </h5>
